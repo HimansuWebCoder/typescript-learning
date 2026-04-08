@@ -167,5 +167,20 @@ lion.sing
 let confused: string | number | boolean = true
 
 let x = 4   // even not assigned x: string
-let x: number = 4 
-x = "hello" //  Type 'string' is not assignable to type 'number'
+// let x: number = 4 
+// x = "hello" //  Type 'string' is not assignable to type 'number'
+
+interface AnyNonNullishValue {} // equivalent to `type AnyNonNullishValue = {}` or `type AnyNonNullishValue = Object`
+
+let value: AnyNonNullishValue;
+
+// these are all fine, but might not be expected
+value = 1;
+value = "foo";
+value = () => alert("foo");
+value = {};
+value = { foo: "bar" };
+
+// these are errors
+value = undefined;
+value = null;

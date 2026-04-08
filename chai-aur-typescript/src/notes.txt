@@ -1,0 +1,7 @@
+.d.ts
+hints
+errors
+
+npm i some-library
+npm i -D @types/some-library
+
